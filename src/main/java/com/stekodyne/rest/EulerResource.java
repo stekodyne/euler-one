@@ -32,25 +32,26 @@ public class EulerResource {
     public Message calculateEuler1(int upto) {
     	Integer sum = 0;
     	
-    	profiler.start("Time complexity O(m + n)");
+    	profiler.start("Time complexity O(m + n + o)");
     	
     	if (upto > 0) {
-    		List<Integer> values = new ArrayList<>();
     		
     		for (int i = 1; i * 3 < upto; i++) {
-    			values.add(3 * i);
+    			sum += (3 * i);
     		}
     		
     		for (int i = 1; 5 * i < upto; i++) {
-    			values.add(5 * i);
+    			sum += (5 * i);
     		}
     		
-    		sum = values.stream().distinct().reduce(0, (a, b) -> a + b);
+    		for (int i = 1; 15 * i < upto; i++) {
+    			sum -= (15 * i);
+    		}
     		
     		profiler.stop();
     	}
     	
-        return new Message(sum, profiler.toString());
+        return new Message(sum, new String().format("%s nanoseconds", profiler.getCopyOfChildTimeInstruments().get(0).toString()));
     }
 
 }
