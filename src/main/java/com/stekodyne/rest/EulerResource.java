@@ -32,7 +32,7 @@ public class EulerResource {
     public Message calculateEuler1(int upto) {
     	Integer sum = 0;
     	
-    	profiler.start("Time complexity mn");
+    	profiler.start("Time complexity O(m + n)");
     	
     	if (upto > 0) {
     		List<Integer> values = new ArrayList<>();
