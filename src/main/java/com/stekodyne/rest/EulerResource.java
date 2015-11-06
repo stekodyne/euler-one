@@ -27,7 +27,7 @@ public class EulerResource {
      *
      * @return a Message to with the sum.
      */
-    @GET("/euler/1")
+    @GET("/euler/1/{upto}")
     @PermitAll
     public Message calculateEuler1(int upto) {
     	Integer sum = 0;

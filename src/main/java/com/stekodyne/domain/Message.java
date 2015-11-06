@@ -4,10 +4,10 @@ import com.google.gson.Gson;
 
 public class Message {
     private String stats;
-	private int sum;
+	private int solution;
 	
-    public Message(Integer sum, String stats) {
-		this.sum = sum;
+    public Message(Integer solution, String stats) {
+		this.solution = solution;
 		this.stats = stats;
 	}
 
@@ -19,12 +19,12 @@ public class Message {
 		this.stats = stats;
 	}
 
-	public int getSum() {
-		return sum;
+	public int getSolution() {
+		return solution;
 	}
 
-	public void setSum(int sum) {
-		this.sum = sum;
+	public void setSolution(int sum) {
+		this.solution = solution;
 	}
 
     @Override
