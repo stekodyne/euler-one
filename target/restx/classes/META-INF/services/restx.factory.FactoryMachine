@@ -1,0 +1,3 @@
+com.stekodyne.AppModuleFactoryMachine
+com.stekodyne.rest.EulerResourceFactoryMachine
+com.stekodyne.rest.EulerResourceRouterFactoryMachine
