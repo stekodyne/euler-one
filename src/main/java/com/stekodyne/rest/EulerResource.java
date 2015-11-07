@@ -1,12 +1,12 @@
 package com.stekodyne.rest;
 
 import com.stekodyne.domain.Message;
+import com.stekodyne.euler.One;
+
 import restx.annotations.GET;
 import restx.annotations.RestxResource;
 import restx.factory.Component;
 import restx.security.PermitAll;
-import java.util.ArrayList;
-import java.util.List;
 import org.slf4j.profiler.Profiler;
 
 @Component @RestxResource
@@ -16,7 +16,7 @@ public class EulerResource {
 	Profiler profiler = null;
 	
 	EulerResource() {
-		profiler = new Profiler("BASIC");
+		profiler = new Profiler("Service");
 	}
 
     /**
@@ -25,31 +25,18 @@ public class EulerResource {
      * 
      * Does not require authentication.
      *
-     * @return a Message to with the sum.
+     * @return a Message to with the solution and profiling statistics.
      */
     @GET("/euler/1/{upto}")
     @PermitAll
     public Message calculateEuler1(int upto) {
     	Integer sum = 0;
     	
-    	profiler.start("Time complexity O(m + n + o)");
+    	profiler.start("Time to compute problem 1");
     	
-    	if (upto > 0) {
+    	One.run(upto);
     		
-    		for (int i = 1; i * 3 < upto; i++) {
-    			sum += (3 * i);
-    		}
-    		
-    		for (int i = 1; 5 * i < upto; i++) {
-    			sum += (5 * i);
-    		}
-    		
-    		for (int i = 1; 15 * i < upto; i++) {
-    			sum -= (15 * i);
-    		}
-    		
-    		profiler.stop();
-    	}
+    	profiler.stop();
     	
         return new Message(sum, new String().format("%s nanoseconds", profiler.getCopyOfChildTimeInstruments().get(0).toString()));
     }
