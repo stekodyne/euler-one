@@ -32,9 +32,9 @@ public class EulerResource {
     public Message calculateEuler1(int upto) {
     	Integer sum = 0;
     	
-    	profiler.start("Time to compute problem 1");
+    	profiler.start("Time to compute Project Euler problem 1");
     	
-    	One.run(upto);
+    	sum = One.run(upto);
     		
     	profiler.stop();
     	
