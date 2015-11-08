@@ -1,2 +1,2 @@
-# euler
-RESTX implementation of solutions for Project Euler
+# Euler
+RESTX implementation of Project Euler problem 1
