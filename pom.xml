@@ -4,10 +4,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.stekodyne</groupId>
-	<artifactId>euler</artifactId>
+	<artifactId>EulerOne</artifactId>
 	<version>0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>euler</name>
+	<name>EulerOne</name>
 
 	<build>
 		<finalName>${project.name}##${project.version}</finalName>
