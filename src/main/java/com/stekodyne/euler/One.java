@@ -9,11 +9,11 @@ public class One {
         if (upto > 2) {
             sum += getSeriesSum(upto, 3);
         }
-        
+
         if (upto > 4) {
             sum += getSeriesSum(upto, 5);
         }
-        
+
         if (upto > 14) {
             sum -= getSeriesSum(upto, 15);
         }
@@ -26,7 +26,7 @@ public class One {
 
         multiplicand = searchMaxFactor(upto, multiplier);
 
-        return (multiplicand * (multiplier * multiplicand + multiplier)) / 2;
+        return summation(multiplier, multiplicand);
     }
 
     private static long searchMaxFactor(long upto, long multiplier) {
@@ -38,13 +38,16 @@ public class One {
         long hi = high;
         long found = 0;
         while (lo <= hi) {
-            
+
             if (lo == hi) {
+                if (upto > (multiplier * lo)) {
+                    found = lo;
+                }
                 break;
             }
-            
+
             long mid = lo + (hi - lo) / 2;
-            
+
             if (upto < (multiplier * mid)) {
                 found = mid;
                 hi = mid - 1;
@@ -58,7 +61,7 @@ public class One {
         }
         return found;
     }
-    
+
     private static long summation(long multiplier, long multiplicand) {
         return (multiplicand * (multiplier * multiplicand + multiplier)) / 2;
     }
