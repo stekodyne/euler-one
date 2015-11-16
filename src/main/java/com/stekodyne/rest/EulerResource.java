@@ -29,8 +29,8 @@ public class EulerResource {
      */
     @GET("/one/{upto}")
     @PermitAll
-    public Message calculateEuler1(int upto) {
-    	Integer sum = 0;
+    public Message calculateEuler(long upto) {
+    	long sum = 0;
     	
     	profiler.start("Time to compute Project Euler problem 1");
     	

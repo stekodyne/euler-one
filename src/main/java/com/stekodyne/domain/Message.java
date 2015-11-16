@@ -3,29 +3,30 @@ package com.stekodyne.domain;
 import com.google.gson.Gson;
 
 public class Message {
+
     private String stats;
-	private int solution;
-	
-    public Message(Integer solution, String stats) {
-		this.solution = solution;
-		this.stats = stats;
-	}
+    private long solution;
 
-	public String getStats() {
-		return stats;
-	}
+    public Message(long solution, String stats) {
+        this.solution = solution;
+        this.stats = stats;
+    }
 
-	public void setStats(String stats) {
-		this.stats = stats;
-	}
+    public String getStats() {
+        return stats;
+    }
 
-	public int getSolution() {
-		return solution;
-	}
+    public void setStats(String stats) {
+        this.stats = stats;
+    }
 
-	public void setSolution(int sum) {
-		this.solution = solution;
-	}
+    public long getSolution() {
+        return solution;
+    }
+
+    public void setSolution(int sum) {
+        this.solution = solution;
+    }
 
     @Override
     public String toString() {

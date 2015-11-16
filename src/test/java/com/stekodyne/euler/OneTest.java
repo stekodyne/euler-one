@@ -8,8 +8,13 @@ public class OneTest {
 
 	@Test
 	public void testRun() {
-		int solution = One.run(10);
+		long solution = One.run(10);
 		assertEquals("Should equal 23!", 23, solution);
 	}
-
+        
+        @Test
+	public void testRunBig() {
+		long solution = One.run(1000);
+		assertEquals("Should equal 233168!", 233168, solution);
+	}
 }
